@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Temperature Converter</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <label for="inputField">Input the temperature</label>
-    <div>
-        <input type="number" id="inputField" placeholder="0">
-        <button id="resetBtn">Reset</button><br>
-        <label for="resultCtoF" id="rCF" style="display: none;">C to F:</label>
-        <span id="resultCtoF"></span><br>
-        <label for="resultCtoK" id="rCK" style="display: none;">C to K:</label>
-        <span id="resultCtoK"></span><br>
-        <label for="resultFtoC" id="rFC" style="display: none;">F to C:</label>
-        <span id="resultFtoC"></span><br>
-        <label for="resultFtoK" id="rFK" style="display: none;">F to K:</label>
-        <span id="resultFtoK"></span><br>
-        <label for="resultKtoC" id="rKC" style="display: none;">K to C:</label>
-        <span id="resultKtoC"></span><br>
-        <label for="resultKtoF" id="rKF" style="display: none;">K to F:</label>
-        <span id="resultKtoF"></span><br>
-    </div>
+    <main class="app">
+        <form class="converter" autocomplete="off">
+            <label for="inputField" class="title">Input the Temperature</label>
+            <input type="number" id="inputField" placeholder="0">
+            <button id="resetBtn" type="button">Reset</button>
+            <div class="results">
+                <p class="result-row" id="rCF"><span class="result-label">C to F:</span> <span class="result-value" id="resultCtoF"></span></p>
+                <p class="result-row" id="rCK"><span class="result-label">C to K:</span> <span class="result-value" id="resultCtoK"></span></p>
+                <p class="result-row" id="rFC"><span class="result-label">F to C:</span> <span class="result-value" id="resultFtoC"></span></p>
+                <p class="result-row" id="rFK"><span class="result-label">F to K:</span> <span class="result-value" id="resultFtoK"></span></p>
+                <p class="result-row" id="rKC"><span class="result-label">K to C:</span> <span class="result-value" id="resultKtoC"></span></p>
+                <p class="result-row" id="rKF"><span class="result-label">K to F:</span> <span class="result-value" id="resultKtoF"></span></p>
+            </div>
+        </form>
+    </main>
 
     <script src="temperature.js"></script>
 </body>

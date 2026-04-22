@@ -1,5 +1,6 @@
 const inputField = document.getElementById("inputField");
 const resetBtn = document.getElementById("resetBtn");
+const form = document.querySelector(".converter");
 
 const resultCtoF = document.getElementById("resultCtoF");
 const resultCtoK = document.getElementById("resultCtoK");
@@ -14,6 +15,10 @@ const labelFtoC = document.getElementById("rFC");
 const labelFtoK = document.getElementById("rFK");
 const labelKtoC = document.getElementById("rKC");
 const labelKtoF = document.getElementById("rKF");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+});
 
 function calculateCtoF() {
     temp = parseFloat(inputField.value) || 0;
@@ -83,20 +88,13 @@ inputField.addEventListener("input", calculateKtoC);
 inputField.addEventListener("input", calculateKtoF);
 
 inputField.addEventListener("input", () => {
-    if (inputField.value.trim() != "" && inputField.value.trim() != 0) {
-        labelCtoF.style.display = "inline";
-        labelCtoK.style.display = "inline";
-        labelFtoC.style.display = "inline";
-        labelFtoK.style.display = "inline";
-        labelKtoC.style.display = "inline";
-        labelKtoF.style.display = "inline";
-    } else {
-        labelCtoF.style.display = "none";
-        labelCtoK.style.display = "none";
-        labelFtoC.style.display = "none";
-        labelFtoK.style.display = "none";
-        labelKtoC.style.display = "none";
-        labelKtoF.style.display = "none";
+    if (inputField.value.trim() === "" || inputField.value.trim() === "0") {
+        resultCtoF.textContent = "";
+        resultCtoK.textContent = "";
+        resultFtoC.textContent = "";
+        resultFtoK.textContent = "";
+        resultKtoC.textContent = "";
+        resultKtoF.textContent = "";
     }
 });
 
@@ -108,10 +106,4 @@ resetBtn.addEventListener("click", () => {
     calculateFtoK();
     calculateKtoC();
     calculateKtoF();
-    labelCtoF.style.display = "none";
-    labelCtoK.style.display = "none";
-    labelFtoC.style.display = "none";
-    labelFtoK.style.display = "none";
-    labelKtoC.style.display = "none";
-    labelKtoF.style.display = "none";
 });
